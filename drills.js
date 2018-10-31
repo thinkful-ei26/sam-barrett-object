@@ -152,31 +152,31 @@ function keyDeleter(obj) {
 // console.log(fourthMeal);
 
 
-const ob1 = {
-  name: 'bigK',
-  jobTitle: 'mechanic',
-};
-const ob2 =  {
-  name: 'kevin',
-  jobTitle: 'ski patrol',
-  boss: 'bigK'
-};
-const ob3 =  {
-  name: 'greg',
-  jobTitle: 'lifty',
-  boss: 'bigK'
-};
+// const ob1 = {
+//   name: 'bigK',
+//   jobTitle: 'mechanic',
+// };
+// const ob2 =  {
+//   name: 'kevin',
+//   jobTitle: 'ski patrol',
+//   boss: 'bigK'
+// };
+// const ob3 =  {
+//   name: 'greg',
+//   jobTitle: 'lifty',
+//   boss: 'bigK'
+// };
 
-const myArray = [ob1,ob2,ob3];
+// const myArray = [ob1,ob2,ob3];
 
-myArray.forEach(function(user) { 
-  if (!user.boss) {
-    console.log(`${user.jobTitle} ${user.name} doesn't report to anybody.`);
-  }
-  else 
-  {console.log(`${user.jobTitle} ${user.name} reports to ${user.boss}`);
-  }
-});
+// myArray.forEach(function(user) { 
+//   if (!user.boss) {
+//     console.log(`${user.jobTitle} ${user.name} doesn't report to anybody.`);
+//   }
+//   else 
+//   {console.log(`${user.jobTitle} ${user.name} reports to ${user.boss}`);
+//   }
+// });
 
 
 
@@ -205,44 +205,26 @@ function decode(word) {
     c: 4,
     d: 5
   };
-  for (let key in cypher) {
-    if (word[0]===key) {
-      return word[cypher[key] - 1];
-    }
-    
-    }
   
+  if (word[0] in cypher) {
+    return word[cypher[word[0]] - 1];
+  } else {
+    return ' ';
   }
+
+}   
+
+function decodeWords(words) {
+  const myArray = words.split(' '); 
+  let lettersArray = [];
+  for (let i = 0; i < myArray.length; i++) {
+    lettersArray.push(decode(myArray[i]));
+
+  }
+  return lettersArray.join('');
+
 }
 
-
-// function decodeWords()
-
-// function decode(word) {
-//   let num;
-//   switch (word[0]) {
-//   case 'a':
-//     num = 2;
-//     break;
-//   case 'b':
-//     num = 3;
-//     break;
-//   case 'c':
-//     num = 4;
-//     break;
-//   case 'd':
-//     num = 5;
-//     break;
-//   default:
-//     num = 0;
-//     break;
-//   }
-//   if (!num) {
-//     return ' ';
-//   }
-//   return word[num - 1];
-// }
-
-
 const message = 'craft block argon meter bells brown croon droop';
-console.log(decode('craft'));
+console.log(decode('mroop'));
+console.log(decodeWords(message));
