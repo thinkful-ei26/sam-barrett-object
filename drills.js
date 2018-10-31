@@ -159,14 +159,34 @@ const ob1 = {
 const ob2 =  {
   name: 'kevin',
   jobTitle: 'ski patrol',
+  boss: 'bigK'
 };
 const ob3 =  {
   name: 'greg',
   jobTitle: 'lifty',
+  boss: 'bigK'
 };
 
 const myArray = [ob1,ob2,ob3];
 
-myArray.forEach(user => 
-  console.log(`${user.name} is a ${user.jobTitle}`));
+myArray.forEach(function(user) { 
+  if (!user.boss) {
+    console.log(`${user.jobTitle} ${user.name} doesn't report to anybody.`)
+  }
+  else 
+  {console.log(`${user.jobTitle} ${user.name} reports to ${user.boss}`)
+  }
+});
 
+
+
+
+// Expand on the previous example by adding a boss property to everyone except 
+// the owner of the company.
+// Change the iteration to print out messages in this
+//  format: "${title} ${name} reports to ${boss}.". 
+//  For example: Junior Engineer Bob reports to Fred..
+// What gets printed out for the owner?
+// Adjust the message so that people with no boss display
+//  "${title} ${name} doesn't report to anybody." - for example, Founder John doesn't 
+// report to anybody.
