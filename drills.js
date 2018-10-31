@@ -237,6 +237,10 @@ function createCharacter(name, nickname, race, origin, attack, defence) {
     origin,
     attack,
     defence,
+    describe: function () {
+      return `${this.name} is a ${this.race} from ${this.origin}.`;
+    }
   };
 }
+
 console.log(createCharacter('Gandalf the White', 'gandolf', 'Wizard', 'Middle Earth', '10','6'));
