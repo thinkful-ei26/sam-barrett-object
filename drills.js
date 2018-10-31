@@ -91,38 +91,82 @@ function keyDeleter(obj) {
 // original array, it should return the original name and course, but should update the 
 // status to In Summer school
 
-const studentData = [
-  {
-    name: 'Tim',
-    status: 'Current student',
-    course: 'Biology',
-  },
-  {
-    name: 'Sue',
-    status: 'Withdrawn',
-    course: 'Mathematics',
-  },
-  {
-    name: 'Liz',
-    status: 'On leave',
-    course: 'Computer science',
-  },
-];
+// const studentData = [
+//   {
+//     name: 'Tim',
+//     status: 'Current student',
+//     course: 'Biology',
+//   },
+//   {
+//     name: 'Sue',
+//     status: 'Withdrawn',
+//     course: 'Mathematics',
+//   },
+//   {
+//     name: 'Liz',
+//     status: 'On leave',
+//     course: 'Computer science',
+//   },
+// ];
 
-function enrolInSummerSchool(students) {
-  const res = [];
-  for (let i = 0; i < students.length; i++) {
-    res.push({
-      name: students[i].name,
-      status: 'enrolled in summer school',
-      course: students[i].course,
-    });
-  }
-  return res;
-}
+// function enrolInSummerSchool(students) {
+//   const res = [];
+//   for (let i = 0; i < students.length; i++) {
+//     res.push({
+//       name: students[i].name,
+//       status: 'enrolled in summer school',
+//       course: students[i].course,
+//     });
+//   }
+//   return res;
+// }
 
-console.log(enrolInSummerSchool(studentData));
-  
-  
-  
- 
+// console.log(enrolInSummerSchool(studentData))
+
+// const loaf = {
+//   flour: 300,
+//   water: 210,
+//   hydration: function() {
+//     return this.water / this.flour * 100;
+//   }
+// };
+
+// console.log(loaf.hydration());
+
+// const obj = {
+//   foo: 'fooa',
+//   bar: 'bara',
+//   fum: 'fuma',
+//   quux: 'quuxa',
+//   spam: 'spama',
+// };
+
+// for (let key in obj) {
+//   console.log(key, obj[key]);
+// }
+
+// const obj = {
+//   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+// };
+// const fourthMeal = obj.meals[3];
+// console.log(fourthMeal);
+
+
+const ob1 = {
+  name: 'bigK',
+  jobTitle: 'mechanic',
+};
+const ob2 =  {
+  name: 'kevin',
+  jobTitle: 'ski patrol',
+};
+const ob3 =  {
+  name: 'greg',
+  jobTitle: 'lifty',
+};
+
+const myArray = [ob1,ob2,ob3];
+
+myArray.forEach(user => 
+  console.log(`${user.name} is a ${user.jobTitle}`));
+
