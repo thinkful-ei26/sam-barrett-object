@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // function createMyObject() {
 //     return {
@@ -33,19 +33,19 @@
 //   }
   
 const sampleObj = {
-    foo: 'foo',
-    bar: 'bar',
-    bizz: 'bizz',
-    bang: 'bang',
-  };
+  foo: 'foo',
+  bar: 'bar',
+  bizz: 'bizz',
+  bang: 'bang',
+};
   
-  function keyDeleter(obj) {
-    delete obj.foo;
-    delete obj.bar;
-    return obj;
-  }
+function keyDeleter(obj) {
+  delete obj.foo;
+  delete obj.bar;
+  return obj;
+}
   
-  /* From here down, you are not expected to 
+/* From here down, you are not expected to 
      understand.... for now :)  
      
      
@@ -53,33 +53,75 @@ const sampleObj = {
      
   */
   
-  (function testKeyDeleter() {
-    var obj = keyDeleter({
-      foo: 'foo',
-      bar: 'bar',
-      bizz: 'bizz',
-      bang: 'bang',
+// (function testKeyDeleter() {
+//   var obj = keyDeleter({
+//     foo: 'foo',
+//     bar: 'bar',
+//     bizz: 'bizz',
+//     bang: 'bang',
+//   });
+
+
+
+//   Take up to 10 minutes to write a function called makeStudentReport that takes a single 
+//   argument, data. data is an array of objects. Each object in the array represents a student 
+//   and their letter grade for a course — for example, {name: 'Johnny Robot', grade: 'C'}.
+
+// makeStudentReport should return an array of strings. For each item in data, return a string 
+// that looks like this: '[name]: [grade]'. The name and grade values on the student object 
+// should be substituted in.
+
+// function makeStudentsReport(data) {
+//   // your code here
+//   const result = [];
+//   for (let i = 0; i < data.length; i++) {
+//     const item = data[i];
+//     result.push(`${item.name}: ${item.grade}`);
+//   }
+//   console.log(result);
+//   return result;
+// }
+
+
+// Take up to 10 minutes to write a function called enrollInSummerSchool that takes a single 
+// argument, students. students is an array of objects, with each object representing a 
+// student — for example, {name: 'Tim', status: 'Current student', course: 'Biology'}.
+
+// enrollInSummerSchool should return an array of objects. For each object from the 
+// original array, it should return the original name and course, but should update the 
+// status to In Summer school
+
+const studentData = [
+  {
+    name: 'Tim',
+    status: 'Current student',
+    course: 'Biology',
+  },
+  {
+    name: 'Sue',
+    status: 'Withdrawn',
+    course: 'Mathematics',
+  },
+  {
+    name: 'Liz',
+    status: 'On leave',
+    course: 'Computer science',
+  },
+];
+
+function enrolInSummerSchool(students) {
+  const res = [];
+  for (let i = 0; i < students.length; i++) {
+    res.push({
+      name: students[i].name,
+      status: 'enrolled in summer school',
+      course: students[i].course,
     });
-  
-    if (typeof obj !== 'object') {
-      console.error('ERROR: `keyDeleter` must be return an object');
-      return false;
-    }
-    ['foo', 'bar'].forEach(function(key) {
-      if (key in obj) {
-        console.error('`keyDeleter` did not delete the key for ' + key);
-        return false;
-      }
-    });
-    ['bizz', 'bang'].forEach(function(key) {
-      if (!(key in obj && obj[key] === key)) {
-        console.error('`keyDeleter` is deleting keys other than `foo` and `bar`');
-        return false;
-      }
-    });
-    console.log('SUCCESS: `keyDeleter` works correctly!');
-  })();
-  
+  }
+  return res;
+}
+
+console.log(enrolInSummerSchool(studentData));
   
   
   
