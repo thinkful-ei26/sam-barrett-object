@@ -198,33 +198,45 @@ function keyDeleter(obj) {
 // as a string.
 
 
-function decode(word) {
-  const cypher = {
-    a: 2,
-    b: 3,
-    c: 4,
-    d: 5
-  };
+// function decode(word) {
+//   const cypher = {
+//     a: 2,
+//     b: 3,
+//     c: 4,
+//     d: 5
+//   };
   
-  if (word[0] in cypher) {
-    return word[cypher[word[0]] - 1];
-  } else {
-    return ' ';
-  }
+//   if (word[0] in cypher) {
+//     return word[cypher[word[0]] - 1];
+//   } else {
+//     return ' ';
+//   }
 
-}   
+// }   
 
-function decodeWords(words) {
-  const myArray = words.split(' '); 
-  let lettersArray = [];
-  for (let i = 0; i < myArray.length; i++) {
-    lettersArray.push(decode(myArray[i]));
+// function decodeWords(words) {
+//   const myArray = words.split(' '); 
+//   let lettersArray = [];
+//   for (let i = 0; i < myArray.length; i++) {
+//     lettersArray.push(decode(myArray[i]));
 
-  }
-  return lettersArray.join('');
+//   }
+//   return lettersArray.join('');
 
+// }
+
+// const message = 'craft block argon meter bells brown croon droop';
+// console.log(decode('mroop'));
+// console.log(decodeWords(message));
+
+function createCharacter(name, nickname, race, origin, attack, defence) {
+  return {
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defence,
+  };
 }
-
-const message = 'craft block argon meter bells brown croon droop';
-console.log(decode('mroop'));
-console.log(decodeWords(message));
+console.log(createCharacter('Gandalf the White', 'gandolf', 'Wizard', 'Middle Earth', '10','6'));
