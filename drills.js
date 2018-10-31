@@ -230,7 +230,7 @@ function keyDeleter(obj) {
 // console.log(decodeWords(message));
 
 function createCharacter(name, nickname, race, origin, attack, defence) {
-  return {
+  let char = {
     name,
     nickname,
     race,
@@ -238,9 +238,18 @@ function createCharacter(name, nickname, race, origin, attack, defence) {
     attack,
     defence,
     describe: function () {
-      return `${this.name} is a ${this.race} from ${this.origin}.`;
+      console.log(`${this.name} is a ${this.race} from ${this.origin}.`);
+    },
+    evaluateFight: function(char) {
+      console.log(`Your opponent takes ${this.attack} damage and you receive ${this.defence} damage`);
     }
   };
+  return char;
 }
 
-console.log(createCharacter('Gandalf the White', 'gandolf', 'Wizard', 'Middle Earth', '10','6'));
+const Gandolf = ('Gandalf the White', 'gandolf', 'Wizard', 'Middle Earth', '10','6');
+let characters = [createCharacter(Gandolf)];
+// char.push(characters);
+
+
+console.log(characters);
