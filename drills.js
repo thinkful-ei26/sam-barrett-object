@@ -171,10 +171,10 @@ const myArray = [ob1,ob2,ob3];
 
 myArray.forEach(function(user) { 
   if (!user.boss) {
-    console.log(`${user.jobTitle} ${user.name} doesn't report to anybody.`)
+    console.log(`${user.jobTitle} ${user.name} doesn't report to anybody.`);
   }
   else 
-  {console.log(`${user.jobTitle} ${user.name} reports to ${user.boss}`)
+  {console.log(`${user.jobTitle} ${user.name} reports to ${user.boss}`);
   }
 });
 
@@ -190,3 +190,59 @@ myArray.forEach(function(user) {
 // Adjust the message so that people with no boss display
 //  "${title} ${name} doesn't report to anybody." - for example, Founder John doesn't 
 // report to anybody.
+
+
+// Redo your Cracking the Code problem from String Drills but this time use an object 
+// as your cipher. Additionally, create a decodeWords function that utilizes your decode 
+// function to accept a single string of words, and then return the fully decoded message 
+// as a string.
+
+
+function decode(word) {
+  const cypher = {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5
+  };
+  for (let key in cypher) {
+    if (word[0]===key) {
+      return word[cypher[key] - 1];
+    }
+    
+    }
+  
+  }
+}
+
+
+// function decodeWords()
+
+// function decode(word) {
+//   let num;
+//   switch (word[0]) {
+//   case 'a':
+//     num = 2;
+//     break;
+//   case 'b':
+//     num = 3;
+//     break;
+//   case 'c':
+//     num = 4;
+//     break;
+//   case 'd':
+//     num = 5;
+//     break;
+//   default:
+//     num = 0;
+//     break;
+//   }
+//   if (!num) {
+//     return ' ';
+//   }
+//   return word[num - 1];
+// }
+
+
+const message = 'craft block argon meter bells brown croon droop';
+console.log(decode('craft'));
